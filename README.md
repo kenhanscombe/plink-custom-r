@@ -26,7 +26,7 @@ git clone https://github.com/kenhanscombe/plink-custom-r.git
 
 ## Retrieve model fit statistics
 
-In an R script (e.g. `plink_custom_analysis.R`), define a custom function. This script defines a pseudo-R-squared for alogistic regression analysis, and uses the `broom` functions `glance` and `tidy` to collect fit statistics. (Note: Before changing anything to suit your needs, see the **Details** section at the end.)
+In an R script (e.g. `plink_custom_analysis.R`), define a custom function. This script defines a pseudo R-squared for a logistic regression analysis, and uses the `broom` functions `glance` and `tidy` to collect fit statistics. (Note: Before changing anything to suit your needs, see the **Details** section at the end.)
 
 ```{r}
 Rplink <- function(PHENO, GENO, CLUSTER, COVAR) {
