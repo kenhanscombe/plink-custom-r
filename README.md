@@ -17,10 +17,10 @@ More information for PLINK's **R Plugin functions** is available in the [1.07](h
 
 First, you will need to install the development version of [PLINK](https://www.cog-genomics.org/plink/1.9/), and the latest version of [R](https://cran.r-project.org/). Open R and install relevant packages. `Rserve` is required; `broom` and a couple of `tidyverse` packages are needed for the specific example below. Make a note of the `Rserve` installation location printed by `install.packages`. You will need to point to it later.
 
-To copy the R script, clone this repository
+To copy the R script, clone this repository.
 
 ```{bash}
-git clone ... 
+git clone https://github.com/kenhanscombe/plink-custom-r.git
 ```
 
 
