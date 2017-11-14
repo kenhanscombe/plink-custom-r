@@ -11,7 +11,7 @@ More information for PLINK's **R Plugin functions** is available in the [1.07](h
 <br>
 
 
-# Getting started
+## Getting started
 
 First, you will need to install the development version of [PLINK](https://www.cog-genomics.org/plink/1.9/), and the latest version of [R](https://cran.r-project.org/). Open R and install relevant packages. `Rserve` is required; `broom` and a couple of `tidyverse` packages are needed for the specific example below. Make a note of the `Rserve` installation location printed by `install.packages`. You will need to point to it later.
 
@@ -24,7 +24,7 @@ git clone https://github.com/kenhanscombe/plink-custom-r.git
 <br>
 
 
-# Retrieve model fit statistics
+## Retrieve model fit statistics
 
 In an R script (e.g. `plink_custom_analysis.R`), define a custom function. This script defines a pseudo-R-squared for alogistic regression analysis, and uses the `broom` functions `glance` and `tidy` to collect fit statistics. (Note: Before changing anything to suit your needs, see the **Details** section at the end.)
 
@@ -78,7 +78,7 @@ plink \
 <br>
 
 
-## Output
+### Output
 
 For each SNP in your analysis (i.e., each row in the output `plink.auto.R`), PLINK combines the vector of outputs v, with the 4 values for CHR, SNP, BP, and A1. The R read command below adds a header to the custom output. You could of course do this in a bash one-liner, but if you're going to use in R to visualize your association results and model fit statistics, you can add column names on reading in the data.
 
@@ -115,7 +115,7 @@ custom_plink_result <- read_table2(
 <br>
 
 
-## Multi-SNP model
+### Multi-SNP model
 
 If you want to inspect the overall model fit of a multi-SNP model, or compare the relative fit of multiple genetic variants (e.g. your 3 favourite SNPs), against a null model (e.g. 10 PCs), you cannot include the SNPs with the `--condition` flag. PLINK's `--R` always runs the analysis defined in `Rplink`. There are a couple of workarounds. 
 One solution is to add the SNPs to the covariate file. First, convert the 3 SNPs to a 0/1/2 count of the reference allele with `--recode A`. The recoded SNPs appear in the last 3 columns of `plink.raw`. Add these 3 columns to the covariate file. Next, edit the function call in Rplink to not include snps (i.e., delete `+ snp` ) then run your custom analysis once with `--covar-number 1-10` (null), and a second time with `--covar-number 1-13`. Compare the 2 models.
