@@ -26,7 +26,7 @@ git clone https://github.com/kenhanscombe/plink-custom-r.git
 
 # Retrieve model fit statistics
 
-In an R script (e.g. `plink_custom_analysis.R`), define a custom function. (Note: Before changing anything, see the **Details** section at the end.)
+In an R script (e.g. `plink_custom_analysis.R`), define a custom function. This script defines a pseudo-R-squared for alogistic regression analysis, and uses the `broom` functions `glance` and `tidy` to collect fit statistics. (Note: Before changing anything to suit your needs, see the **Details** section at the end.)
 
 ```{r}
 Rplink <- function(PHENO, GENO, CLUSTER, COVAR) {
@@ -56,10 +56,10 @@ Rplink <- function(PHENO, GENO, CLUSTER, COVAR) {
 }
 ```
 
+<br>
 
 
-
-To run the custom analysis, first start `Rserve` (supply the full path to `R CMD`). All data input and filtering flags to PLINK remain the same. Simply add `--R [R script filename]` to the PLINK call. The results of the custom analysis are written to `plink.auto.R` by default (as usual, you can change the file stem `plink` with `--out`).
+To run the custom analysis, first start `Rserve` (supply the full path to `R CMD`). All data input and filtering flags to PLINK remain the same. Simply add `--R [R script filename]` to the PLINK call. The results of the custom analysis are written to `plink.auto.R` by default (As usual, you can change the file stem `plink` with `--out`).
 
 ```{bash}
 R CMD /full/path/to/Rserve
