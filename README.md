@@ -1,6 +1,6 @@
 
 # Custom analysis with PLINK R plugin
-(If like me, you thought this would be great but hadn't actually got around to figuring out how to use it)
+_*If like me, you thought this would be great but hadn't actually got around to figuring out how to use it, here is a script to play with and some setup instructions._
 
 <br>
 
