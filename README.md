@@ -91,25 +91,11 @@ custom_plink_result <- read_table2(
   col_names = c("chr", "snp", "bp", "a1", "estimate", "std_error", "statistic",
     "p_value", "null_deviance", "df_null", "logLik", "aic", "bic", "deviance",
     "df_residual", "pseudo_rsq"),
-  cols(
-    chr = col_integer(),
-    snp = col_character(),
-    bp = col_integer(),
-    a1 = col_character(),
-    estimate = col_double(),
-    std_error = col_double(),
-    statistic = col_double(),
-    p_value = col_double(),
-    null_deviance = col_double(),
-    df_null = col_double(),
-   logLik = col_double(),
-    aic = col_double(),
-    bic = col_double(),
-    deviance = col_double(),
-    df_residual = col_double(),
-    pseudo_rsq = col_double()
-  )
+  col_type = cols(snp = col_character())
 )
+
+# If your snp names are in CHR:BP format (or contain a colon), readr::read_table2 interprets them as time data. If you use a readr function to read in your results, supply the correct type as above.
+
 ```
 
 <br>
