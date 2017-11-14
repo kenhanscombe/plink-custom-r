@@ -2,6 +2,8 @@
 # Custom analysis with PLINK R plugin
 (If like me, you thought this would be great but hadn't actually got around to figuring out how to use it)
 
+<br>
+
 It is possible to call R from PLINK. This facility allows you to keep genotype and phenotype data in PLINK binary format and perform a custom analysis. Below is an example of how this facility can be used to retrieve model fit statistics.
 
 More information for PLINK's **R Plugin functions** is available in the [1.07](http://zzz.bwh.harvard.edu/plink/rfunc.shtml) and [1.9](https://www.cog-genomics.org/plink/1.9/rserve) documentation, including details for changing port, host, socket. 
@@ -71,9 +73,9 @@ plink \
 --R custom_plink_analysis.R
 ```
 
-> **NB.** In the above example we're collecting model fit statistics from a logistic regresion (using the excellent package `broom`). `--logistic` is an optional sanity check. Compare `plink.assoc.logistic` to `plink.auto.R` for effect size, signed statistic, and p-value. (Adding a header to the `plink --R` output helps. See **Output** section below)
+**NB.** In the above example we're collecting model fit statistics from a logistic regresion (using the excellent package `broom`). `--logistic` is an optional sanity check. Compare `plink.assoc.logistic` to `plink.auto.R` for effect size, signed statistic, and p-value. (Adding a header to the `plink --R` output helps. See **Output** section below)
 
-
+<br>
 
 
 ## Output
@@ -110,7 +112,7 @@ custom_plink_result <- read_table2(
 )
 ```
 
-
+<br>
 
 
 ## Multi-SNP model
