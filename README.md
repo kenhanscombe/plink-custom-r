@@ -80,7 +80,7 @@ plink \
 
 ### Output
 
-For each SNP in your analysis (i.e., each row in the output `plink.auto.R`), PLINK combines the vector of outputs v, with the 4 values for CHR, SNP, BP, and A1. The R read command below adds a header to the custom output. You could of course do this in a bash one-liner, but if you're going to use in R to visualize your association results and model fit statistics, you can add column names on reading in the data.
+For each SNP in your analysis (i.e., each row in the output `plink.auto.R`), PLINK combines the vector of outputs `summary_m`, with the 4 values for CHR, SNP, BP, and A1. The R read command below adds a header to the custom output. You could of course do this in a bash one-liner, but if you're going to use in R to visualize your association results and model fit statistics, you can add column names on reading in the data.
 
 ```{bash}
 library(tidyverse)
