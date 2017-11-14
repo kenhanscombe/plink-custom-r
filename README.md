@@ -1,16 +1,12 @@
----
-title: "Custom analysis with PLINK R plugin"
-output: html_document
----
 
-<br>
-
+# Custom analysis with PLINK R plugin
+(If like me, you thought this would be great but hadn't actually got around to figuring out how to use it)
 
 It is possible to call R from PLINK. This facility allows you to keep genotype and phenotype data in PLINK binary format and perform a custom analysis. Below is an example of how this facility can be used to retrieve model fit statistics.
 
 More information for PLINK's **R Plugin functions** is available in the [1.07](http://zzz.bwh.harvard.edu/plink/rfunc.shtml) and [1.9](https://www.cog-genomics.org/plink/1.9/rserve) documentation, including details for changing port, host, socket. 
 
-
+<br>
 
 
 # Getting started
@@ -23,7 +19,7 @@ To copy the R script, clone this repository.
 git clone https://github.com/kenhanscombe/plink-custom-r.git
 ```
 
-
+<br>
 
 
 # Retrieve model fit statistics
@@ -123,10 +119,10 @@ If you want to inspect the overall model fit of a multi-SNP model, or compare th
 One solution is to add the SNPs to the covariate file. First, convert the 3 SNPs to a 0/1/2 count of the reference allele with `--recode A`. The recoded SNPs appear in the last 3 columns of `plink.raw`. Add these 3 columns to the covariate file. Next, edit the function call in Rplink to not include snps (i.e., delete `+ snp` ) then run your custom analysis once with `--covar-number 1-10` (null), and a second time with `--covar-number 1-13`. Compare the 2 models.
 
 <br>
+<br>
 
 
-
-
+***
 ### Details (summarised from PLINK 1.07 and 1.9 documentation)
 
 For a sample of size n, genotyped at l genetic variants, including c covariates, all genotypes, phenotypes, covariates and cluster membership are accessible within the custom R script as:
